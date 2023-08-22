@@ -2,5 +2,8 @@
 src = "src"
 out = "out"
 libs = ["lib"]
-remappings = ['@openzeppelin/=lib/openzeppelin-contracts/']
+remappings = [
+    '@openzeppelin/=lib/openzeppelin-contracts/',
+    '@atxdao/contracts/rep/=lib/rep-contracts/src/',
+]
 # See more config options https://github.com/foundry-rs/foundry/tree/master/config

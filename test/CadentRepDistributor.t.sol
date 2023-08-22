@@ -2,9 +2,9 @@
 pragma solidity ^0.8.13;
 
 import {Test, console} from "forge-std/Test.sol";
-import {MockRepTokens} from "./Mocks/MockRepToken.sol";
 import {CadentRepDistributor} from "../src/CadentRepDistributor.sol";
 import {DeployCadentRepDistributor} from "../script/DeployCadentRepDistributor.s.sol";
+import {RepTokens} from "@atxdao/contracts/rep/RepTokens.sol";
 
 contract CadentRepDistributorTest is Test {
     address public ADMIN = makeAddr("ADMIN");
@@ -19,7 +19,7 @@ contract CadentRepDistributorTest is Test {
     uint256 s_selectedCadence;
     uint256 s_slightlyLessThanCadence;
 
-    MockRepTokens s_repTokens;
+    RepTokens s_repTokens;
     CadentRepDistributor s_cadentRepDistributor;
 
     DeployCadentRepDistributor s_deployCadentRepDistributor;
@@ -28,7 +28,7 @@ contract CadentRepDistributorTest is Test {
         address[] memory admins = new address[](1);
         admins[0] = ADMIN;
 
-        s_repTokens = new MockRepTokens(admins, MAX_MINT_PER_TX);
+        s_repTokens = new RepTokens(admins, MAX_MINT_PER_TX);
 
         vm.startPrank(ADMIN);
         s_repTokens.grantRole(s_repTokens.MINTER_ROLE(), ADMIN);

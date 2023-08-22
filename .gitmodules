@@ -1,0 +1,3 @@
+[submodule "lib/rep-contracts"]
+	path = lib/rep-contracts
+	url = https://github.com/atxdao/rep-contracts
