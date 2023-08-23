@@ -5,9 +5,8 @@ import {Test, console} from "forge-std/Test.sol";
 import {CadentRepDistributor} from "../src/CadentRepDistributor.sol";
 import {DeployCadentRepDistributor} from "../script/DeployCadentRepDistributor.s.sol";
 import {RepTokens} from "@atxdao/contracts/rep/RepTokens.sol";
-import {StdInvariant} from "forge-std/StdInvariant.sol";
 
-contract CadentRepDistributorTest is StdInvariant, Test {
+contract CadentRepDistributorTest is Test {
     address public ADMIN = makeAddr("ADMIN");
     address public USER = makeAddr("USER");
     uint256 constant MAX_MINT_PER_TX = 100;
@@ -160,6 +159,4 @@ contract CadentRepDistributorTest is StdInvariant, Test {
     function testGetCadence() public {
         assertEq(s_cadentRepDistributor.getCadence(), s_selectedCadence);
     }
-
-    function invariant_testGetRemainingTime() public {}
 }
