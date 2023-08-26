@@ -2,7 +2,7 @@
 pragma solidity ^0.8.13;
 
 import {ERC1155Holder} from "@openzeppelin/contracts/token/ERC1155/utils/ERC1155Holder.sol";
-import {IRepTokens} from "@atxdao/contracts/rep/IRepTokens.sol";
+import {IRepTokens} from "@atxdao/contracts/reputation/IRepTokens.sol";
 
 contract CadentRepDistributor is ERC1155Holder {
     error CadentRepDistributor__NOT_ENOUGH_TIME_PASSED();

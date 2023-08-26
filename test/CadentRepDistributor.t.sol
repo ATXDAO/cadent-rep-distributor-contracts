@@ -4,7 +4,7 @@ pragma solidity ^0.8.13;
 import {Test, console} from "forge-std/Test.sol";
 import {CadentRepDistributor} from "../src/CadentRepDistributor.sol";
 import {DeployCadentRepDistributor} from "../script/DeployCadentRepDistributor.s.sol";
-import {RepTokens} from "@atxdao/contracts/rep/RepTokens.sol";
+import {RepTokens} from "@atxdao/contracts/reputation/RepTokens.sol";
 
 contract CadentRepDistributorTest is Test {
     address public ADMIN = makeAddr("ADMIN");
