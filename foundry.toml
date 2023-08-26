@@ -4,7 +4,7 @@ out = "out"
 libs = ["lib"]
 remappings = [
     '@openzeppelin/=lib/openzeppelin-contracts/',
-    '@atxdao/contracts/rep/=lib/rep-contracts/src/',
+    '@atxdao/contracts/rep/=lib/reputation/src/',
 ]
 
 # See more config options https://github.com/foundry-rs/foundry/tree/master/config

@@ -28,7 +28,7 @@ contract CadentRepDistributorTest is Test {
         address[] memory admins = new address[](1);
         admins[0] = ADMIN;
 
-        s_repTokens = new RepTokens(admins, MAX_MINT_PER_TX);
+        s_repTokens = new RepTokens(admins, MAX_MINT_PER_TX, "");
 
         vm.startPrank(ADMIN);
         s_repTokens.grantRole(s_repTokens.MINTER_ROLE(), ADMIN);
