@@ -1,3 +1,6 @@
 [submodule "lib/reputation"]
 	path = lib/reputation
 	url = https://github.com/ATXDAO/reputation
+[submodule "lib/openzeppelin-contracts"]
+	path = lib/openzeppelin-contracts
+	url = https://github.com/OpenZeppelin/openzeppelin-contracts
