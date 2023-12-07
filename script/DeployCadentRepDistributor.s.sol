@@ -10,7 +10,9 @@ contract DeployCadentRepDistributor is Script {
         uint256 amountToDistributePerCadence,
         uint256 cadence
     ) external returns (CadentRepDistributor) {
-        vm.startBroadcast();
+        uint256 deployerPrivateKey = vm.envUint("DEPLOYER_PRIVATE_KEY");
+        vm.startBroadcast(deployerPrivateKey);
+
         CadentRepDistributor cadentRepDistributor = new CadentRepDistributor(
             address(repTokens),
             amountToDistributePerCadence,

@@ -3,6 +3,7 @@ pragma solidity ^0.8.13;
 
 import {ERC1155Holder} from "@openzeppelin/contracts/token/ERC1155/utils/ERC1155Holder.sol";
 import {ReputationTokensBase} from "@atxdao/contracts/reputation/ReputationTokensBase.sol";
+import {ReputationTokensInternal} from "@atxdao/contracts/reputation/ReputationTokensInternal.sol";
 
 /**
  * @title Cadent Reputation Distributor
@@ -48,12 +49,15 @@ contract CadentRepDistributor is ERC1155Holder {
             revert CadentRepDistributor__NOT_ENOUGH_TOkENS_TO_DISTRIBUTE();
         }
 
-        s_rep.distribute(
-            address(this),
-            msg.sender,
-            s_amountToDistributePerCadence,
-            ""
-        );
+        ReputationTokensInternal.TokenOperation[]
+            memory tokenOps = new ReputationTokensInternal.TokenOperation[](2);
+        tokenOps[0].id = 0;
+        tokenOps[0].amount = s_amountToDistributePerCadence;
+
+        tokenOps[1].id = 1;
+        tokenOps[1].amount = s_amountToDistributePerCadence;
+
+        s_rep.distribute(address(this), msg.sender, tokenOps, "");
 
         addressToLastClaimDate[msg.sender] = block.timestamp;
         emit DistributedRep(msg.sender);
