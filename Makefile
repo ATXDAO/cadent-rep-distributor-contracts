@@ -53,3 +53,5 @@ endif
 
 deployCadentRepDistributorWithData:
 	@forge script script/DeployCadentRepDistributorWithData.s.sol:DeployCadentRepDistributorWithData $(NETWORK_ARGS)
+
+#forge build --build-info --build-info-path out/build-info/ && forge script script/DeployCadentRepDistributorWithData.s.sol --rpc-url goerli --broadcast --legacy --verify
